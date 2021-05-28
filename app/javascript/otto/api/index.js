@@ -12,7 +12,6 @@ const adapter = axios.create({
 
 const api = {
   xml: {
-    addXml: (file) => adapter.post('/females', file)
   }
 }
 
