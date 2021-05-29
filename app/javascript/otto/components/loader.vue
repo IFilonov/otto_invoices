@@ -54,13 +54,13 @@ export default {
     failedFn(info) {
       this.$q.notify({
         type: 'negative',
-        message: `Ошибка загрузки файла. Детально: ${info.xhr.responseText}`
+        message: `Ошибка загрузки файла. Детально: ${info.xhr.responseText.substring(1, 500)}`
       })
     },
     uploadedFn(info) {
       this.$q.notify({
         type: 'positive',
-        message: `Файл ${info.files[0].name} успешно загружен!`
+        message: `Файл ${info.files[0].name.substring(1, 500)} успешно загружен!`
       })
     }
   }
