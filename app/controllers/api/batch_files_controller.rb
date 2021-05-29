@@ -13,6 +13,6 @@ class Api::FilesController < ApplicationController
   end
 
   def check_guid
-    
+
   end
 end

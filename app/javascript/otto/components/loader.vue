@@ -3,7 +3,8 @@
     q-uploader(label="Upload"
       accept=".xml"
       :factory="factoryFn"
-      :form-fields="factoryFields"
+      @failed="failedFn"
+      @uploaded="uploadedFn"
       field-name="invoice_file"
       style="max-width: 300px")
       template(v-slot:list="scope")
@@ -32,8 +33,7 @@
 import {mapGetters} from 'vuex'
 export default {
   data: function () {
-    return {
-    }
+    return {}
   },
   computed: {
     ...mapGetters(['host'])
@@ -47,23 +47,20 @@ export default {
           method: 'POST',
           headers: [
             { name: 'X-CSRF-TOKEN', value: token.content },
-          ],
-          formFields: [
-            { name: "sdfsdf", value: "sdfsdfsdfs"}
           ]
         })
       })
     },
-    factoryFields() {
-      return [ {
-        name: "temp",
-        value: "temptemp"
-      }]
-    },
-    onRejected (rejectedEntries) {
+    failedFn(info) {
       this.$q.notify({
         type: 'negative',
-        message: `${rejectedEntries.length} file(s) did not pass validation constraints`
+        message: `Ошибка загрузки файла. Детально: ${info.xhr.responseText}`
+      })
+    },
+    uploadedFn(info) {
+      this.$q.notify({
+        type: 'positive',
+        message: `Файл ${info.files[0].name} успешно загружен!`
       })
     }
   }
