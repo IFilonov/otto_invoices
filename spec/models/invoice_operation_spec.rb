@@ -1,5 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe InvoiceOperation, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { is_expected.to belong_to(:invoice) }
+
+    it { is_expected.to have_db_index :ParcelCode }
+    it { is_expected.to have_db_index :invoice_id }
+
+    it { is_expected.to validate_presence_of :ParcelCode }
+    it { is_expected.to validate_presence_of :ItemQty }
+    it { is_expected.to validate_presence_of :ParcelPrice }
+
+    it {
+      expect(subject).to validate_numericality_of(:ItemQty).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(50).only_integer
+    }
+
+    it {
+      expect(subject).to validate_numericality_of(:ParcelPrice).is_greater_than_or_equal_to(0).is_less_than_or_equal_to(9e4)
+    }
+  end
 end

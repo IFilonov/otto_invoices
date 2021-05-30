@@ -90,6 +90,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rbs (v1.0.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.1.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, RVM: ruby-3.0.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec (v3.10.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.10.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.10.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.10.2, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -164,18 +165,10 @@
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:channel" />
-        <option value="test_unit:controller" />
         <option value="test_unit:generator" />
-        <option value="test_unit:helper" />
         <option value="test_unit:install" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:job" />
         <option value="test_unit:mailbox" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
-        <option value="test_unit:system" />
       </list>
     </option>
     <option name="myGenerators">
@@ -218,18 +211,10 @@
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:channel" />
-        <option value="test_unit:controller" />
         <option value="test_unit:generator" />
-        <option value="test_unit:helper" />
         <option value="test_unit:install" />
-        <option value="test_unit:integration" />
-        <option value="test_unit:job" />
         <option value="test_unit:mailbox" />
-        <option value="test_unit:mailer" />
-        <option value="test_unit:model" />
         <option value="test_unit:plugin" />
-        <option value="test_unit:scaffold" />
-        <option value="test_unit:system" />
       </list>
     </option>
   </component>
@@ -407,14 +392,6 @@
           <RakeTaskImpl description="Prints out your Rack middleware stack" fullCommand="middleware" id="middleware" />
           <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
           <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
-          <RakeTaskImpl description="Run all specs in spec directory (excluding plugin specs)" fullCommand="spec" id="spec" />
-          <RakeTaskImpl id="spec">
-            <subtasks>
-              <RakeTaskImpl description="Run the code examples in spec/models" fullCommand="spec:models" id="models" />
-              <RakeTaskImpl description="" fullCommand="spec:prepare" id="prepare" />
-              <RakeTaskImpl description="" fullCommand="spec:statsetup" id="statsetup" />
-            </subtasks>
-          </RakeTaskImpl>
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
           <RakeTaskImpl description="Runs all tests in test folder except system ones" fullCommand="test" id="test" />
           <RakeTaskImpl id="test">

@@ -2,7 +2,9 @@ class Api::BatchFilesController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   def create
-    process_batch_file(Hash.from_xml(file_params[:invoice_file].read).deep_symbolize_keys)
+    if params[:invoice_file].is_a? ActionDispatch::Http::UploadedFile
+      process_batch_file(Hash.from_xml(File.read(params[:invoice_file].path)).deep_symbolize_keys)
+    end
     render json: @batch_file, status: :created
   end
 
