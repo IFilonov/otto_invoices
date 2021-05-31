@@ -6,6 +6,7 @@ import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 import '@quasar/extras/material-icons/material-icons.css'
 import { Notify } from 'quasar'
 
+// фреймворк Quasar используется для отображения общего фрейма и элемента загрузчика файла q-uploader
 Vue.use(Quasar, {
     iconSet: iconSet,
     plugins: {

@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 import Loader from '../components/loader';
 
+//настройка роутера на страничку  по умолчанию и страничка с компонентом загрузчика
 export default new VueRouter( {
   mode: 'history',
   hashbang: false,

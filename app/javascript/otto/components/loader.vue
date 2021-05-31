@@ -1,3 +1,4 @@
+<!-- Размета окна загрузчика с основным компонентом q-uploader-->
 <template lang="pug">
   div(class="q-pa-md")
     q-uploader(label="Upload"
@@ -39,6 +40,7 @@ export default {
     ...mapGetters(['host'])
   },
   methods: {
+    // подготовка заголовков запроса для отправки файла, в частности X-CSRF-TOKEN
     factoryFn (file) {
       return new Promise((resolve, reject) => {
         const token = document.head.querySelector('meta[name="csrf-token"]');
@@ -51,12 +53,14 @@ export default {
         })
       })
     },
+    // обработка ответа если вернулась ошибка
     failedFn(info) {
       this.$q.notify({
         type: 'negative',
         message: `Ошибка загрузки файла. Детально: ${info.xhr.responseText.substring(0, 500)}`
       })
     },
+    // обработка ответа если файл успешно загружен
     uploadedFn(info) {
       this.$q.notify({
         type: 'positive',
