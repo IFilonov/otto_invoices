@@ -1,0 +1,37 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec # or rubocop-minitest
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/*'
+    - 'db/migrate/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Metrics/MethodLength:
+  Max: 15
+Layout/LineLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
