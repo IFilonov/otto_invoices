@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Status>
+   <ResultCode>OK</ResultCode>
+   <ErrorString errorCode="0">Справочник</ErrorString>
+   <Waiters>
+      <Waiter id="1000006" code="276" pass="FF24798BF79A06FC8D0C401CD59879DB" codeCard="9089" name="DFR" role="MANAGER" guid="{F0622533-A13D-4743-BADE-FC8E9A4EA6CC}" hash="" />
+      <Waiter id="1000009" code="278" pass="9B591D4D0BF95B3C3EF20BE32B10717E" codeCard="741" name="QWER" role="MANAGER" guid="{843C0A82-89A8-4C08-B87F-2BF0F0C7A4FF}" hash="" />
+      <Waiter id="1000010" code="279" pass="F4BD28CB3A5976A3C3BCD26C292209B9" codeCard="496" name="QWERTY" role="WAITER" guid="{801FEE1C-FD32-4A9F-A196-A555A58F0733}" hash="" />
+   </Waiters>
+</Status>

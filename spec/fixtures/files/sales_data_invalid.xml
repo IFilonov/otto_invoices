@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?><Root>
   <FileAttribute>
-    <GUID>16BA036FCC3D4AF7E05378A06D0ADD39</GUID>
+    <GUID>16BA036F55555AF7E05378A06D0ADD38</GUID>
   </FileAttribute>
   <FileData>
     <Batch>
-      <BatchID>844987</BatchID>
+      <BatchID>8456986</BatchID>
       <CreationDate>21.05.2015</CreationDate>
     </Batch>
     <Invoice>
       <InvoiceOperation>
         <CompanyCode>1234</CompanyCode>
-        <InvoiceOperationNumber>45734329</InvoiceOperationNumber>
+        <InvoiceOperationNumber>45734328</InvoiceOperationNumber>
         <InvoiceOperationDate>21.05.2015</InvoiceOperationDate>
       </InvoiceOperation>
       <InvoiceData>
-        <ParcelCode>124211372050132</ParcelCode>
+        <ParcelCode>114211372050132</ParcelCode>
         <ItemQty>1</ItemQty>
-        <ParcelPrice>3393</ParcelPrice>
+        <ParcelPrice>3493</ParcelPrice>
       </InvoiceData>
     </Invoice>
     <Invoice>
       <InvoiceOperation>
         <CompanyCode>1234</CompanyCode>
-        <InvoiceOperationNumber>45733791</InvoiceOperationNumber>
+        <InvoiceOperationNumber>45733790</InvoiceOperationNumber>
         <InvoiceOperationDate>21.05.2015</InvoiceOperationDate>
       </InvoiceOperation>
       <InvoiceData>
-        <ParcelCode>114180267042133</ParcelCode>
+        <ParcelCode>114180267042132</ParcelCode>
         <ItemQty>1</ItemQty>
         <ParcelPrice>3493</ParcelPrice>
       </InvoiceData>
       <InvoiceData>
-        <ParcelCode>114207400042144</ParcelCode>
+        <ParcelCode>114207400042141</ParcelCode>
         <ItemQty>1</ItemQty>
-        <ParcelPrice>6293</ParcelPrice>
+        <ParcelPrice>629453</ParcelPrice>
       </InvoiceData>
     </Invoice>
   </FileData>

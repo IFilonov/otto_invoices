@@ -1,5 +1,6 @@
 class Api::BatchFilesController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
+  rescue_from REXML::ParseException, NoMethodError, with: :bad_request
 
   def create
     if params[:invoice_file].is_a? ActionDispatch::Http::UploadedFile
@@ -38,5 +39,9 @@ class Api::BatchFilesController < ApplicationController
 
   def record_invalid(error)
     render json: { error: error.message }, status: :unprocessable_entity
+  end
+
+  def bad_request(_error)
+    render json: { error: 'Неверный формат файла' }, status: :bad_request
   end
 end

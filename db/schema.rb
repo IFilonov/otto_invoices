@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_112103) do
     t.bigint "invoice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ParcelCode"], name: "index_invoice_operations_on_ParcelCode"
+    t.index ["ParcelCode"], name: "index_invoice_operations_on_ParcelCode", unique: true
     t.index ["invoice_id"], name: "index_invoice_operations_on_invoice_id"
   end
 

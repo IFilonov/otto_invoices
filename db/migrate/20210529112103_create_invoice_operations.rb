@@ -1,4 +1,4 @@
-# 1. rails generate model invoice_operation ParcelCode:string{15}:index  ItemQty:integer{2} 'ParcelPrice:decimal{7,2}' invoice:references
+# 1. rails generate model invoice_operation ParcelCode:string{15}:uniq  ItemQty:integer{2} 'ParcelPrice:decimal{7,2}' invoice:references
 # 2. add 'null: false' for column ParcelCode
 class CreateInvoiceOperations < ActiveRecord::Migration[6.1]
   def change
@@ -10,6 +10,6 @@ class CreateInvoiceOperations < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :invoice_operations, :ParcelCode
+    add_index :invoice_operations, :ParcelCode, unique: true
   end
 end
