@@ -8,9 +8,9 @@ class Api::BatchFilesController < ApplicationController
 
   # обработка запроса на загрузку файла
   def create
-    if params[:invoice_file].is_a? ActionDispatch::Http::UploadedFile
+    if file_params[:invoice_file].is_a? ActionDispatch::Http::UploadedFile
       # поступивший файл преобразуем из xml в hash, добавляем метод, чтобы все строковые ключи стали символьными
-      process_batch_file(Hash.from_xml(File.read(params[:invoice_file].path)).deep_symbolize_keys)
+      process_batch_file(Hash.from_xml(File.read(file_params[:invoice_file].path)).deep_symbolize_keys)
     end
     render json: @batch_file, status: :created
   end
